@@ -22,7 +22,7 @@ def setup_logging(*,
     :py:class:`colorlog.formatter.ColoredFormatter`. It adds a single handler ``console`` to the
     root logger.
 
-    All keyword arguments are recursively merged into the configuration dictionary passed to
+    All keyword arguments are merged into the configuration dictionary passed to
     :py:func:`logging.config.dictConfig`. The keys ``root``, ``formatters``, and ``handlers``
     are popped from the keyword arguments and merged into the respective sections of the
     configuration.
