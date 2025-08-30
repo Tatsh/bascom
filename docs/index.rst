@@ -9,7 +9,7 @@ bascom
 
    .. image:: https://img.shields.io/pypi/v/bascom
       :target: https://pypi.org/project/bascom/
-      :alt: PyPI - Version
+      :alt: PyPI Version
 
    .. image:: https://img.shields.io/github/v/tag/Tatsh/bascom
       :target: https://github.com/Tatsh/bascom/tags
@@ -19,9 +19,13 @@ bascom
       :target: https://github.com/Tatsh/bascom/blob/master/LICENSE.txt
       :alt: License
 
-   .. image:: https://img.shields.io/github/commits-since/Tatsh/bascom/v0.1.1/master
-      :target: https://github.com/Tatsh/bascom/compare/v0.1.1...master
+   .. image:: https://img.shields.io/github/commits-since/Tatsh/bascom/v0.0.1/master
+      :target: https://github.com/Tatsh/bascom/compare/v0.0.1...master
       :alt: GitHub commits since latest release (by SemVer including pre-releases)
+
+   .. image:: https://github.com/Tatsh/bascom/actions/workflows/codeql.yml/badge.svg
+      :target: https://github.com/Tatsh/bascom/actions/workflows/codeql.yml
+      :alt: CodeQL
 
    .. image:: https://github.com/Tatsh/bascom/actions/workflows/qa.yml/badge.svg
       :target: https://github.com/Tatsh/bascom/actions/workflows/qa.yml
