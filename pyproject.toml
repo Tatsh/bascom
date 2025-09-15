@@ -89,7 +89,7 @@ optional = true
 commitizen = "^4.8.4"
 cz-path = "^0.0.1"
 djlint = "^1.36.4"
-mypy = "^1.17.1"
+mypy = "^1.18.1"
 ruff = "^0.12.12"
 yapf = "^0.43.0"
 
