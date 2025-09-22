@@ -35,15 +35,15 @@ repository = "https://github.com/Tatsh/bascom"
 
 [tool.commitizen]
 name = "cz_path"
-remove_path_prefixes = ["include", "src", "bascom"]
+remove_path_prefixes = ["bascom", "include", "src"]
 tag_format = "v$version"
 version_files = [
   ".wiswa.jsonnet",
   "CITATION.cff",
   "README.md",
+  "bascom/__init__.py",
   "docs/index.rst",
   "package.json",
-  "bascom/__init__.py",
 ]
 version_provider = "pep621"
 
@@ -89,8 +89,8 @@ optional = true
 commitizen = "^4.9.1"
 cz-path = "^0.0.1"
 djlint = "^1.36.4"
-mypy = "^1.18.1"
-ruff = "^0.13.0"
+mypy = "^1.18.2"
+ruff = "^0.13.1"
 yapf = "^0.43.0"
 
 [tool.poetry.group.docs]
@@ -132,6 +132,10 @@ pytest-mock = "^3.15.1"
 [tool.poetry.group.tests.dependencies.coveralls]
 python = "<3.13"
 version = "^4.0.1"
+
+[[tool.poetry.include]]
+format = "sdist"
+path = "tests"
 
 [[tool.poetry.packages]]
 include = "bascom"
@@ -249,7 +253,7 @@ ignore = [
 preview = true
 
 [tool.ruff.lint.flake8-builtins]
-allowed-modules = ["typing", "types"]
+allowed-modules = ["types", "typing"]
 
 [tool.ruff.lint.flake8-quotes]
 inline-quotes = "single"
@@ -268,14 +272,17 @@ max-complexity = 20
 [tool.ruff.lint.pep8-naming]
 extend-ignore-names = ["test_*"]
 
-[tool.ruff.lint.per-file-ignores]
-"main.py" = ["PLR0913"]
-
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
 
 [tool.ruff.lint.pylint]
+max-args = 20
 max-branches = 20
+max-locals = 20
+max-positional-args = 15
+max-public-methods = 30
+max-returns = 10
+max-statements = 100
 
 [tool.yapf]
 align_closing_bracket_with_visual_indent = true

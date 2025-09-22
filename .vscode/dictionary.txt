@@ -49,12 +49,14 @@ pydantic
 pydocstyle
 pylance
 pylint
+pypi
 pyproject
 pyright
 pytest
 regen
 rstcheck
 schemafile
+sdist
 sphinxcontrib
 tatsh
 testpaths

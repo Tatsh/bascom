@@ -1,10 +1,6 @@
-(import 'defaults.libjsonnet') + {
-  // Shared
-  github_username: 'Tatsh',
-  social+: {
-    mastodon+: { id: '109370961877277568' },
-  },
-  // Project-specific
+local utils = import 'utils.libjsonnet';
+
+{
   project_name: 'bascom',
   description: 'Core library that my tools use.',
   keywords: ['library', 'logging', 'utilities'],
@@ -14,28 +10,12 @@
     tool+: {
       poetry+: {
         dependencies+: {
-          colorlog: '^6.9.0',
+          colorlog: utils.latestPypiPackageVersionCaret('colorlog'),
         },
       },
     },
   },
-  copilot: {
+  copilot+: {
     intro: 'Bascom is a core library that provides basic functionality such as logging configuration.',
-  },
-  // Common
-  authors: [
-    {
-      'family-names': 'Udvare',
-      'given-names': 'Andrew',
-      email: 'audvare@gmail.com',
-      name: '%s %s' % [self['given-names'], self['family-names']],
-    },
-  ],
-  github+: {
-    funding+: {
-      ko_fi: 'tatsh2',
-      liberapay: 'tatsh2',
-      patreon: 'tatsh2',
-    },
   },
 }
