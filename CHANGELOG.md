@@ -9,21 +9,9 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-### Added
-
-- Item
-
-### Fixed
-
-- Item
-
 ### Changed
 
-- Item
-
-### Removed
-
-- Item
+- Improve typing of `setup_logging()`.
 
 ## [0.0.1] - 2025-00-00
 

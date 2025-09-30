@@ -1,11 +1,32 @@
 """Utilities."""
 from __future__ import annotations
 
-from typing import Any
+from typing import TYPE_CHECKING, TypedDict
 import logging
 import logging.config
 
+from typing_extensions import Unpack
+
 log = logging.getLogger(__name__)
+
+if TYPE_CHECKING:
+    from logging.config import (
+        _FilterConfiguration,
+        _FormatterConfiguration,
+        _HandlerConfiguration,
+        _LoggerConfiguration,
+        _RootLoggerConfiguration,
+    )
+
+
+class SetupLoggingKwargs(TypedDict, total=False):
+    """Keyword arguments for :py:func:`setup_logging`."""
+    formatters: dict[str, _FormatterConfiguration]
+    filters: dict[str, _FilterConfiguration]
+    handlers: dict[str, _HandlerConfiguration]
+    incremental: bool
+    loggers: dict[str, _LoggerConfiguration]
+    root: _RootLoggerConfiguration
 
 
 def setup_logging(*,
@@ -13,7 +34,7 @@ def setup_logging(*,
                   disable_existing_loggers: bool = True,
                   force_color: bool = False,
                   no_color: bool = False,
-                  **kwargs: Any) -> None:
+                  **kwargs: Unpack[SetupLoggingKwargs]) -> None:
     """
     Set up logging configuration.
 
@@ -47,10 +68,6 @@ def setup_logging(*,
     handlers = kwargs.pop('handlers', {})
     logging.config.dictConfig({
         'disable_existing_loggers': disable_existing_loggers,
-        'root': {
-            'level': 'DEBUG' if debug else 'INFO',
-            'handlers': ('console',)
-        } | root,
         'formatters': {
             'default': {
                 '()': 'colorlog.ColoredFormatter',
@@ -68,5 +85,9 @@ def setup_logging(*,
                 'formatter': 'default',
             }
         } | handlers,
+        'root': {
+            'level': 'DEBUG' if debug else 'INFO',
+            'handlers': ('console',)
+        } | root,
         'version': 1
     } | kwargs)
