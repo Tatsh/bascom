@@ -19,7 +19,7 @@ keywords = ["library", "logging", "utilities"]
 license = "MIT"
 name = "bascom"
 readme = "README.md"
-version = "0.0.1"
+version = "0.0.2"
 
 [[project.authors]]
 email = "audvare@gmail.com"
