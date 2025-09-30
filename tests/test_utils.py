@@ -10,12 +10,7 @@ if TYPE_CHECKING:
 
 def test_setup_logging(mocker: MockerFixture) -> None:
     mock_dc = mocker.patch('logging.config.dictConfig')
-    setup_logging(debug=True,
-                  force_color=True,
-                  handlers={'custom': {
-                      'class': 'MyHandler'
-                  }},
-                  arbitrary_key='value')
+    setup_logging(debug=True, force_color=True, handlers={'custom': {'class': 'MyHandler'}})
     mock_dc.assert_called_once_with({
         'disable_existing_loggers': True,
         'root': {
@@ -42,6 +37,5 @@ def test_setup_logging(mocker: MockerFixture) -> None:
                 'class': 'MyHandler',
             }
         },
-        'version': 1,
-        'arbitrary_key': 'value'
+        'version': 1
     })

@@ -1,4 +1,5 @@
 asyncio
+autoclass
 autodoc
 automodule
 bascom
@@ -32,6 +33,7 @@ itertools
 jinja
 jsonnet
 jsonschema
+kwargs
 levelname
 lextudio
 libjsonnet

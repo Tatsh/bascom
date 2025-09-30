@@ -20,13 +20,19 @@ if TYPE_CHECKING:
 
 
 class SetupLoggingKwargs(TypedDict, total=False):
-    """Keyword arguments for :py:func:`setup_logging`."""
+    """Keyword arguments for :py:func:`.setup_logging`."""
     formatters: dict[str, _FormatterConfiguration]
+    """Formatters to add to the logging configuration."""
     filters: dict[str, _FilterConfiguration]
+    """Filters to add to the logging configuration."""
     handlers: dict[str, _HandlerConfiguration]
+    """Handlers to add to the logging configuration."""
     incremental: bool
+    """If ``True``, the configuration is merged with the existing configuration."""
     loggers: dict[str, _LoggerConfiguration]
+    """Loggers to add to the logging configuration."""
     root: _RootLoggerConfiguration
+    """Root logger configuration."""
 
 
 def setup_logging(*,
@@ -37,6 +43,11 @@ def setup_logging(*,
                   **kwargs: Unpack[SetupLoggingKwargs]) -> None:
     """
     Set up logging configuration.
+
+    Most of the time, the following is sufficient::
+
+        from bascom import setup_logging
+        setup_logging(debug=debug_param, loggers={'your_logger_name': {}})
 
     This calls :py:func:`logging.config.dictConfig` with a configuration that logs to the console
     with `colorlog <https://pypi.org/project/colorlog/>`_'s
