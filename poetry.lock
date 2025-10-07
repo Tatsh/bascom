@@ -2275,13 +2275,13 @@ test = ["tox"]
 
 [[package]]
 name = "sphinx-immaterial"
-version = "0.13.6"
+version = "0.13.7"
 description = "Adaptation of mkdocs-material theme for the Sphinx documentation system"
 optional = false
 python-versions = ">=3.10"
 groups = ["docs"]
 files = [
-    {file = "sphinx_immaterial-0.13.6-py3-none-any.whl", hash = "sha256:4c7dce949967fa0905f71e5af22ba781f2dc9a22f2c6d4e0cef166cef099871c"},
+    {file = "sphinx_immaterial-0.13.7-py3-none-any.whl", hash = "sha256:65cd8afae7e6f8c6f3fb747ca73a0481b69a4d2e4f7ca40e6f4361c2c186309a"},
 ]
 
 [package.dependencies]
@@ -2841,4 +2841,4 @@ tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<3.14"
-content-hash = "30e633e2eee0569e2ac36d8865a108105e134c03c1e5c37989e026edb50a9718"
+content-hash = "09932195001ca28087a8ca995a2854eb6027e5c84ef657543c8714a4973dfb5c"
