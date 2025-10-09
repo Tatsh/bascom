@@ -22,7 +22,7 @@ esbenp
 esbonio
 excinfo
 fontawesome
-furb
+foxundermoon
 genindex
 globaltoc
 hoverxref
@@ -59,11 +59,13 @@ regen
 rstcheck
 schemafile
 sdist
+shellformat
 sphinxcontrib
 tatsh
 testpaths
 tryfirst
 udvare
+venv
 virtualenv
 wiswa
 yapf
