@@ -79,7 +79,7 @@ strict_optional = true
 warn_unreachable = true
 
 [tool.poetry.dependencies]
-colorlog = "^6.9.0"
+colorlog = "^6.10.1"
 python = ">=3.10,<4.0"
 typing-extensions = "^4.15.0"
 
