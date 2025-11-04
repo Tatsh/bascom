@@ -91,7 +91,7 @@ commitizen = "^4.9.1"
 cz-path = "^0.0.2"
 djlint = "^1.36.4"
 mypy = "^1.18.2"
-ruff = "^0.14.2"
+ruff = "^0.14.3"
 yapf = "^0.43.0"
 
 [tool.poetry.group.docs]
@@ -101,13 +101,13 @@ optional = true
 autodoc-pydantic = "^2.2.0"
 doc8 = "^2.0.0"
 docutils = "<0.22"
-esbonio = "^0.16.5"
+esbonio = "^1.0.0"
 numpydoc = "^1.9.0"
 restructuredtext-lint = "^1.4.0"
-sphinx-click = "^6.1.0"
 sphinx-datatables = "^0.3.1"
 sphinx-hoverxref = "^1.4.2"
 sphinx-immaterial = "^0.13.8"
+tomlkit = "^0.13.3"
 
 [tool.poetry.group.docs.dependencies.enum-tools]
 extras = ["sphinx"]
@@ -170,6 +170,12 @@ line-length = 100
 namespace-packages = ["docs", "tests"]
 target-version = "py310"
 unsafe-fixes = true
+
+[tool.ruff.format]
+docstring-code-format = true
+line-ending = "lf"
+preview = true
+quote-style = "single"
 
 [tool.ruff.lint]
 extend-select = ["ALL"]
