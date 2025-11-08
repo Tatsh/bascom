@@ -637,18 +637,17 @@ test = ["cssselect", "importlib-resources ; python_version < \"3.9\"", "jaraco.t
 
 [[package]]
 name = "cz-path"
-version = "0.0.2"
+version = "0.0.3"
 description = "Commitizen plugin that prefixes commit messages with the common path or prefix of staged files."
 optional = false
 python-versions = "<4.0,>=3.10"
 groups = ["dev"]
 files = [
-    {file = "cz_path-0.0.2-py3-none-any.whl", hash = "sha256:eeabf8514f546dddf5aeb3799c53e60352ee0ae822ba0fb973bfdf43efec82d7"},
-    {file = "cz_path-0.0.2.tar.gz", hash = "sha256:d23c8c197f99f4b6ae19febcdb759815e6093669318bc10424a1d3b89190599e"},
+    {file = "cz_path-0.0.3-py3-none-any.whl", hash = "sha256:c62ef9e444dd976505022b2e709192c1ca90dc5bdad808b90d3aac02e60fd329"},
+    {file = "cz_path-0.0.3.tar.gz", hash = "sha256:ac039de5512bdf8d04c7c0ca2dd7b9a86d403559116622c1938beadbc66c9777"},
 ]
 
 [package.dependencies]
-bascom = ">=0.0.3,<0.0.4"
 commitizen = ">=4.9.1,<5.0.0"
 gitpython = ">=3.1.45,<4.0.0"
 typing-extensions = ">=4.15.0,<5.0.0"
@@ -3013,4 +3012,4 @@ tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "19ca084432523f2f6a875cbf84bea385d086855738686fa83facff7e43c16c83"
+content-hash = "69b336b41d95b95d17957b411a542367fa0e1adeca9c616287e2fad81a33b91f"
