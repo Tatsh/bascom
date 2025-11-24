@@ -10,6 +10,7 @@ colorlog
 commitizen
 conftest
 coveragerc
+coverallsapp
 dataclasses
 datatable
 datatables
@@ -36,6 +37,7 @@ jsonschema
 kwargs
 levelname
 lextudio
+libera
 libjsonnet
 linters
 modindex
@@ -45,6 +47,7 @@ norecursedirs
 numpy
 numpydoc
 overriden
+pavelzw
 pipx
 pycache
 pydantic
