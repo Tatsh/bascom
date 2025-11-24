@@ -4,7 +4,7 @@
 [![PyPI - Version](https://img.shields.io/pypi/v/bascom)](https://pypi.org/project/bascom/)
 [![GitHub tag (with filter)](https://img.shields.io/github/v/tag/Tatsh/bascom)](https://github.com/Tatsh/bascom/tags)
 [![License](https://img.shields.io/github/license/Tatsh/bascom)](https://github.com/Tatsh/bascom/blob/master/LICENSE.txt)
-[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/bascom/v0.0.4/master)](https://github.com/Tatsh/bascom/compare/v0.0.4...master)
+[![GitHub commits since latest release (by SemVer including pre-releases)](https://img.shields.io/github/commits-since/Tatsh/bascom/v0.1.0/master)](https://github.com/Tatsh/bascom/compare/v0.1.0...master)
 [![CodeQL](https://github.com/Tatsh/bascom/actions/workflows/codeql.yml/badge.svg)](https://github.com/Tatsh/bascom/actions/workflows/codeql.yml)
 [![QA](https://github.com/Tatsh/bascom/actions/workflows/qa.yml/badge.svg)](https://github.com/Tatsh/bascom/actions/workflows/qa.yml)
 [![Tests](https://github.com/Tatsh/bascom/actions/workflows/tests.yml/badge.svg)](https://github.com/Tatsh/bascom/actions/workflows/tests.yml)

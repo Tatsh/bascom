@@ -5,7 +5,7 @@ local utils = import 'utils.libjsonnet';
   description: 'Core library that my tools use.',
   keywords: ['library', 'logging', 'utilities'],
   want_main: false,
-  version: '0.0.4',
+  version: '0.1.0',
   pyproject+: {
     tool+: {
       poetry+: {

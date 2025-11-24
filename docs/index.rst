@@ -19,8 +19,8 @@ bascom
       :target: https://github.com/Tatsh/bascom/blob/master/LICENSE.txt
       :alt: License
 
-   .. image:: https://img.shields.io/github/commits-since/Tatsh/bascom/v0.0.4/master
-      :target: https://github.com/Tatsh/bascom/compare/v0.0.4...master
+   .. image:: https://img.shields.io/github/commits-since/Tatsh/bascom/v0.1.0/master
+      :target: https://github.com/Tatsh/bascom/compare/v0.1.0...master
       :alt: GitHub commits since latest release (by SemVer including pre-releases)
 
    .. image:: https://github.com/Tatsh/bascom/actions/workflows/codeql.yml/badge.svg
