@@ -9,6 +9,18 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.0]
+
+### Added
+
+- GitHub workflow for publishing to PyPI with OIDC and uploading wheels to releases.
+
+### Changed
+
+- Switch to simpler log format by default; debug mode enables detailed format.
+- The environment variable `BASCOM_CONSOLE_FORMATTER` may be used to control the `console`
+  formatter.
+
 ## [0.0.4] - 2025-11-08
 
 This release is solely for testing the publishing workflow.
@@ -29,7 +41,8 @@ This release is solely for testing the publishing workflow.
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/bascom/compare/v0.0.4...HEAD
+[unreleased]: https://github.com/Tatsh/bascom/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/Tatsh/bascom/compare/v0.0.4...v0.1.0
 [0.0.4]: https://github.com/Tatsh/bascom/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/Tatsh/bascom/compare/v0.0.2...v0.0.3
 [0.0.2]: https://github.com/Tatsh/deltona/compare/v0.0.1...v0.0.2
