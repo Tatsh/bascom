@@ -13,29 +13,43 @@ def test_setup_logging(mocker: MockerFixture) -> None:
     setup_logging(debug=True, force_color=True, handlers={'custom': {'class': 'MyHandler'}})
     mock_dc.assert_called_once_with({
         'disable_existing_loggers': True,
-        'root': {
-            'level': 'DEBUG',
-            'handlers': ('console',)
-        },
         'formatters': {
             'default': {
-                '()': 'colorlog.ColoredFormatter',
+                'class': 'colorlog.ColoredFormatter',
+                'force_color': True,
+                'format': '%(log_color)s%(message)s',
+                'no_color': False
+            },
+            'debug-no-time': {
+                'class': 'colorlog.ColoredFormatter',
+                'force_color': True,
+                'format': ('%(log_color)s%(levelname)-8s%(reset)s | '
+                           '%(light_green)s%(name)s%(reset)s:%(light_red)s%(funcName)s%(reset)s:'
+                           '%(blue)s%(lineno)d%(reset)s - %(message)s'),
+                'no_color': False
+            },
+            'debug': {
+                'class': 'colorlog.ColoredFormatter',
                 'force_color': True,
                 'format': (
-                    '%(light_cyan)s%(asctime)s%(reset)s | %(log_color)s%(levelname)-8s%(reset)s | '
-                    '%(light_green)s%(name)s%(reset)s:%(light_red)s%(funcName)s%(reset)s:'
-                    '%(blue)s%(lineno)d%(reset)s - %(message)s'),
-                'no_color': False,
+                    '%(light_cyan)s%(asctime)s%(reset)s | '
+                    '%(log_color)s%(levelname)-8s%(reset)s | %(light_green)s%(name)s%(reset)s:'
+                    '%(light_red)s%(funcName)s%(reset)s:%(blue)s%(lineno)d%(reset)s - %(message)s'),
+                'no_color': False
             }
         },
         'handlers': {
             'console': {
                 'class': 'colorlog.StreamHandler',
-                'formatter': 'default',
+                'formatter': 'debug'
             },
             'custom': {
-                'class': 'MyHandler',
+                'class': 'MyHandler'
             }
+        },
+        'root': {
+            'level': 'DEBUG',
+            'handlers': ('console',)
         },
         'version': 1
     })

@@ -1,9 +1,10 @@
 """Utilities."""
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, TypedDict
+from typing import TYPE_CHECKING, Literal, TypedDict
 import logging
 import logging.config
+import os
 
 from typing_extensions import Unpack
 
@@ -17,6 +18,12 @@ if TYPE_CHECKING:
         _LoggerConfiguration,
         _RootLoggerConfiguration,
     )
+
+__all__ = ('SetupLoggingKwargs', 'setup_logging')
+
+_DEBUG_NO_TIME_FORMAT = ('%(log_color)s%(levelname)-8s%(reset)s | '
+                         '%(light_green)s%(name)s%(reset)s:%(light_red)s%(funcName)s%(reset)s:'
+                         '%(blue)s%(lineno)d%(reset)s - %(message)s')
 
 
 class SetupLoggingKwargs(TypedDict, total=False):
@@ -40,6 +47,7 @@ def setup_logging(*,
                   disable_existing_loggers: bool = True,
                   force_color: bool = False,
                   no_color: bool = False,
+                  formatter: Literal['debug', 'debug-no-time', 'default'] | None = None,
                   **kwargs: Unpack[SetupLoggingKwargs]) -> None:
     """
     Set up logging configuration.
@@ -53,6 +61,12 @@ def setup_logging(*,
     with `colorlog <https://pypi.org/project/colorlog/>`_'s
     :py:class:`colorlog.formatter.ColoredFormatter`. It adds a single handler ``console`` to the
     root logger.
+
+    By default, the formatter for the console handler is set to ``debug`` if ``debug`` is ``True``,
+    otherwise to ``default``. The ``debug`` formatter includes timestamps and more detailed
+    information, while the ``default`` formatter only logs the message. The formatter can be
+    overridden by setting the environment variable ``BASCOM_CONSOLE_FORMATTER`` to either
+    ``debug``, ``debug-no-time``, or ``default``.
 
     All keyword arguments are merged into the configuration dictionary passed to
     :py:func:`logging.config.dictConfig`. The keys ``root``, ``formatters``, and ``handlers``
@@ -73,6 +87,8 @@ def setup_logging(*,
     no_color : bool
         If ``True``, disable color output. This can be overriden with environment variable
         ``NO_COLOR``.
+    formatter : Literal['debug', 'debug-no-time', 'default']
+        Formatter to use for the console handler.
     """
     root = kwargs.pop('root', {})
     formatters = kwargs.pop('formatters', {})
@@ -81,19 +97,31 @@ def setup_logging(*,
         'disable_existing_loggers': disable_existing_loggers,
         'formatters': {
             'default': {
-                '()': 'colorlog.ColoredFormatter',
+                'class': 'colorlog.ColoredFormatter',
                 'force_color': force_color,
-                'format':
-                    ('%(light_cyan)s%(asctime)s%(reset)s | %(log_color)s%(levelname)-8s%(reset)s | '
-                     '%(light_green)s%(name)s%(reset)s:%(light_red)s%(funcName)s%(reset)s:'
-                     '%(blue)s%(lineno)d%(reset)s - %(message)s'),
+                'format': '%(log_color)s%(message)s',
+                'no_color': no_color,
+            },
+            'debug-no-time': {
+                'class': 'colorlog.ColoredFormatter',
+                'force_color': force_color,
+                'format': _DEBUG_NO_TIME_FORMAT,
+                'no_color': no_color,
+            },
+            'debug': {
+                'class': 'colorlog.ColoredFormatter',
+                'force_color': force_color,
+                'format': f'%(light_cyan)s%(asctime)s%(reset)s | {_DEBUG_NO_TIME_FORMAT}',
                 'no_color': no_color,
             }
         } | formatters,
         'handlers': {
             'console': {
-                'class': 'colorlog.StreamHandler',
-                'formatter': 'default',
+                'class':
+                    'colorlog.StreamHandler',
+                'formatter':
+                    os.environ.get('BASCOM_CONSOLE_FORMATTER', formatter or
+                                   ('debug' if debug else 'default')),
             }
         } | handlers,
         'root': {
