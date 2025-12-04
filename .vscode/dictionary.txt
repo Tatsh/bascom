@@ -35,7 +35,6 @@ jinja
 jsonnet
 jsonschema
 kwargs
-levelname
 lextudio
 libera
 libjsonnet
