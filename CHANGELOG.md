@@ -9,7 +9,21 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-## [0.1.0]
+## [0.1.1] - 2025-12-27
+
+### Added
+
+- `log_colors` argument to `setup_logging` to allow overriding the colours.
+
+### Changed
+
+- INFO level now logs with light white text (escape code 97).
+- CRITICAL level now logs with bold light red text (escape code 91 + 1).
+
+It is expected that the most popular terminals have no problems displaying these colours. If there
+are issues, set environment variable `NO_COLOR=1`.
+
+## [0.1.0] - 2025-11-24
 
 ### Added
 
@@ -41,7 +55,8 @@ This release is solely for testing the publishing workflow.
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/bascom/compare/v0.1.0...HEAD
+[unreleased]: https://github.com/Tatsh/bascom/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/Tatsh/bascom/compare/v0.1.0...v0.1.0
 [0.1.0]: https://github.com/Tatsh/bascom/compare/v0.0.4...v0.1.0
 [0.0.4]: https://github.com/Tatsh/bascom/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/Tatsh/bascom/compare/v0.0.2...v0.0.3
