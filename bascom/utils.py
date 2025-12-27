@@ -6,6 +6,7 @@ import logging
 import logging.config
 import os
 
+from colorlog import default_log_colors
 from typing_extensions import Unpack
 
 log = logging.getLogger(__name__)
@@ -19,11 +20,27 @@ if TYPE_CHECKING:
         _RootLoggerConfiguration,
     )
 
-__all__ = ('SetupLoggingKwargs', 'setup_logging')
+__all__ = ('LogColors', 'SetupLoggingKwargs', 'setup_logging')
 
 _DEBUG_NO_TIME_FORMAT = ('%(log_color)s%(levelname)-8s%(reset)s | '
                          '%(light_green)s%(name)s%(reset)s:%(light_red)s%(funcName)s%(reset)s:'
                          '%(blue)s%(lineno)d%(reset)s - %(message)s')
+_DEFAULT_LOG_COLORS = default_log_colors | {'INFO': 'light_white', 'CRITICAL': 'bold_light_red'}
+
+
+class LogColors(TypedDict, total=False):
+    """A dictionary of log colors."""
+
+    CRITICAL: str
+    """Colour for CRITICAL log level."""
+    DEBUG: str
+    """Colour for DEBUG log level."""
+    ERROR: str
+    """Colour for ERROR log level."""
+    INFO: str
+    """Colour for INFO log level."""
+    WARNING: str
+    """Colour for WARNING log level."""
 
 
 class SetupLoggingKwargs(TypedDict, total=False):
@@ -48,6 +65,7 @@ def setup_logging(*,
                   force_color: bool = False,
                   no_color: bool = False,
                   formatter: Literal['debug', 'debug-no-time', 'default'] | None = None,
+                  log_colors: LogColors | None = None,
                   **kwargs: Unpack[SetupLoggingKwargs]) -> None:
     """
     Set up logging configuration.
@@ -89,6 +107,9 @@ def setup_logging(*,
         ``NO_COLOR``.
     formatter : Literal['debug', 'debug-no-time', 'default']
         Formatter to use for the console handler.
+    log_colors : LogColors | None
+        Log colors to use for the ``ColoredFormatter``. Specifying every colour is not required as
+        the defaults will be merged.
     """
     root = kwargs.pop('root', {})
     formatters = kwargs.pop('formatters', {})
@@ -100,18 +121,21 @@ def setup_logging(*,
                 'class': 'colorlog.ColoredFormatter',
                 'force_color': force_color,
                 'format': '%(log_color)s%(message)s',
+                'log_colors': _DEFAULT_LOG_COLORS | (log_colors or {}),
                 'no_color': no_color,
             },
             'debug-no-time': {
                 'class': 'colorlog.ColoredFormatter',
                 'force_color': force_color,
                 'format': _DEBUG_NO_TIME_FORMAT,
+                'log_colors': _DEFAULT_LOG_COLORS | (log_colors or {}),
                 'no_color': no_color,
             },
             'debug': {
                 'class': 'colorlog.ColoredFormatter',
                 'force_color': force_color,
                 'format': f'%(light_cyan)s%(asctime)s%(reset)s | {_DEBUG_NO_TIME_FORMAT}',
+                'log_colors': _DEFAULT_LOG_COLORS | (log_colors or {}),
                 'no_color': no_color,
             }
         } | formatters,

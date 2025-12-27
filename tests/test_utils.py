@@ -18,6 +18,13 @@ def test_setup_logging(mocker: MockerFixture) -> None:
                 'class': 'colorlog.ColoredFormatter',
                 'force_color': True,
                 'format': '%(log_color)s%(message)s',
+                'log_colors': {
+                    'DEBUG': 'white',
+                    'INFO': 'light_white',
+                    'WARNING': 'yellow',
+                    'ERROR': 'red',
+                    'CRITICAL': 'bold_light_red'
+                },
                 'no_color': False
             },
             'debug-no-time': {
@@ -26,6 +33,13 @@ def test_setup_logging(mocker: MockerFixture) -> None:
                 'format': ('%(log_color)s%(levelname)-8s%(reset)s | '
                            '%(light_green)s%(name)s%(reset)s:%(light_red)s%(funcName)s%(reset)s:'
                            '%(blue)s%(lineno)d%(reset)s - %(message)s'),
+                'log_colors': {
+                    'DEBUG': 'white',
+                    'INFO': 'light_white',
+                    'WARNING': 'yellow',
+                    'ERROR': 'red',
+                    'CRITICAL': 'bold_light_red'
+                },
                 'no_color': False
             },
             'debug': {
@@ -35,6 +49,13 @@ def test_setup_logging(mocker: MockerFixture) -> None:
                     '%(light_cyan)s%(asctime)s%(reset)s | '
                     '%(log_color)s%(levelname)-8s%(reset)s | %(light_green)s%(name)s%(reset)s:'
                     '%(light_red)s%(funcName)s%(reset)s:%(blue)s%(lineno)d%(reset)s - %(message)s'),
+                'log_colors': {
+                    'DEBUG': 'white',
+                    'INFO': 'light_white',
+                    'WARNING': 'yellow',
+                    'ERROR': 'red',
+                    'CRITICAL': 'bold_light_red'
+                },
                 'no_color': False
             }
         },
