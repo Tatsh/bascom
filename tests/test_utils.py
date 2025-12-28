@@ -15,7 +15,7 @@ def test_setup_logging(mocker: MockerFixture) -> None:
         'disable_existing_loggers': True,
         'formatters': {
             'default': {
-                'class': 'colorlog.ColoredFormatter',
+                '()': 'colorlog.ColoredFormatter',
                 'force_color': True,
                 'format': '%(log_color)s%(message)s',
                 'log_colors': {
@@ -28,7 +28,7 @@ def test_setup_logging(mocker: MockerFixture) -> None:
                 'no_color': False
             },
             'debug-no-time': {
-                'class': 'colorlog.ColoredFormatter',
+                '()': 'colorlog.ColoredFormatter',
                 'force_color': True,
                 'format': ('%(log_color)s%(levelname)-8s%(reset)s | '
                            '%(light_green)s%(name)s%(reset)s:%(light_red)s%(funcName)s%(reset)s:'
@@ -43,7 +43,7 @@ def test_setup_logging(mocker: MockerFixture) -> None:
                 'no_color': False
             },
             'debug': {
-                'class': 'colorlog.ColoredFormatter',
+                '()': 'colorlog.ColoredFormatter',
                 'force_color': True,
                 'format': (
                     '%(light_cyan)s%(asctime)s%(reset)s | '
