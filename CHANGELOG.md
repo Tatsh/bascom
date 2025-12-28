@@ -9,6 +9,12 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.2] - 2025-12-27
+
+### Fixed
+
+- Fix calling ColoredFormatter with custom arguments.
+
 ## [0.1.1] - 2025-12-27
 
 ### Added
@@ -55,8 +61,9 @@ This release is solely for testing the publishing workflow.
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/bascom/compare/v0.1.1...HEAD
-[0.1.1]: https://github.com/Tatsh/bascom/compare/v0.1.0...v0.1.0
+[unreleased]: https://github.com/Tatsh/bascom/compare/v0.1.2...HEAD
+[0.1.2]: https://github.com/Tatsh/bascom/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/Tatsh/bascom/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/Tatsh/bascom/compare/v0.0.4...v0.1.0
 [0.0.4]: https://github.com/Tatsh/bascom/compare/v0.0.3...v0.0.4
 [0.0.3]: https://github.com/Tatsh/bascom/compare/v0.0.2...v0.0.3
