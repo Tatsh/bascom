@@ -87,6 +87,9 @@ Core library that my tools use.
    .. automodule:: bascom
       :members:
 
+   .. autoclass:: bascom.utils.LogColors
+      :members:
+
    .. autoclass:: bascom.utils.SetupLoggingKwargs
       :members:
 
