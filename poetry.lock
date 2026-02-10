@@ -2445,13 +2445,13 @@ docs = ["sphinx-copybutton", "sphinx-toolbox"]
 
 [[package]]
 name = "sphinx-immaterial"
-version = "0.13.8"
+version = "0.13.9"
 description = "Adaptation of mkdocs-material theme for the Sphinx documentation system"
 optional = false
 python-versions = ">=3.10"
 groups = ["docs"]
 files = [
-    {file = "sphinx_immaterial-0.13.8-py3-none-any.whl", hash = "sha256:fd92cc9e9f65e1f3a28a9f4f6886250a97dc65da41ece67f562bc1c00e89be6f"},
+    {file = "sphinx_immaterial-0.13.9-py3-none-any.whl", hash = "sha256:5ea92d2ddc6befcd0fedbd3e6766ea4746e94d9a8a5cc0ab092a946e1fde4254"},
 ]
 
 [package.dependencies]
@@ -3132,4 +3132,4 @@ tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "69d0bb8bf2425f0bac472b19782a1fc668cfa18e5239fc8ffb11f4925cc595ff"
+content-hash = "128d707edf144dbec0753783f02a1b38464a82e0908b839bf3c584254a478db1"
