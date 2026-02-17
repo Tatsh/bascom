@@ -4,7 +4,6 @@ autodoc
 automodule
 bascom
 bsky
-codeowners
 colored
 colorlog
 colors
