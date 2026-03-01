@@ -37,6 +37,7 @@ kwargs
 lextudio
 libera
 libjsonnet
+libsonnet
 linters
 modindex
 mypy
@@ -72,3 +73,4 @@ virtualenv
 wiswa
 yapf
 yapfignore
+yarnrc
