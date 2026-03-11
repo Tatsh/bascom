@@ -13,7 +13,7 @@
 [![Documentation Status](https://readthedocs.org/projects/bascom/badge/?version=latest)](https://bascom.readthedocs.org/?badge=latest)
 [![mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://pre-commit.com/)
-[![Poetry](https://img.shields.io/badge/Poetry-242d3e?logo=poetry)](https://python-poetry.org)
+[![uv](https://img.shields.io/badge/uv-261230?logo=astral)](https://docs.astral.sh/uv/)
 [![pydocstyle](https://img.shields.io/badge/pydocstyle-enabled-AD4CD3?logo=pydocstyle)](https://www.pydocstyle.org/)
 [![pytest](https://img.shields.io/badge/pytest-enabled-CFB97D?logo=pytest)](https://docs.pytest.org)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
@@ -31,14 +31,6 @@ Core library that my tools use. At the time all that is included is a simple fun
 `setup_logging()`. See documentation for more details.
 
 ## Installation
-
-### Poetry
-
-```shell
-poetry add bascom
-```
-
-### Pip
 
 ```shell
 pip install bascom

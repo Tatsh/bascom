@@ -1,6 +1,37 @@
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core"]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[dependency-groups]
+dev = [
+  "commitizen>=4.13.9",
+  "cz-path>=0.0.4",
+  "djlint>=1.36.4",
+  "mypy>=1.19.1",
+  "ruff>=0.15.5",
+  "yapf>=0.43.0",
+]
+docs = [
+  "autodoc-pydantic>=2.2.0",
+  "doc8>=2.0.0",
+  "docutils<0.22",
+  "enum-tools[sphinx]>=0.13.0",
+  "esbonio>=1.1.0",
+  "numpydoc>=1.10.0",
+  "restructuredtext-lint>=2.0.2",
+  "sphinx-datatables>=1.0.0",
+  "sphinx-immaterial>=0.13.9",
+  "sphinx<9.0.0; python_version >= \"3.11\"",
+  "sphinx>=7.2.5; python_version < \"3.11\"",
+  "tomlkit>=0.14.0",
+]
+tests = [
+  "coveralls>=4.1.0",
+  "mock>=5.2.0",
+  "pytest-cov>=7.0.0",
+  "pytest-mock>=3.15.1",
+  "pytest>=9.0.2",
+]
 
 [project]
 classifiers = [
@@ -14,12 +45,13 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Typing :: Typed",
 ]
+dependencies = ["colorlog>=6.10.1", "typing-extensions>=4.15.0"]
 description = "Core library that my tools use."
-dynamic = ["dependencies", "requires-python"]
 keywords = ["library", "logging", "utilities"]
 license = "MIT"
 name = "bascom"
 readme = "README.md"
+requires-python = ">=3.10,<4.0"
 version = "0.1.2"
 
 [[project.authors]]
@@ -77,68 +109,6 @@ show_column_numbers = true
 strict = true
 strict_optional = true
 warn_unreachable = true
-
-[tool.poetry.dependencies]
-colorlog = "^6.10.1"
-python = ">=3.10,<4.0"
-typing-extensions = "^4.15.0"
-
-[tool.poetry.group.dev]
-optional = true
-
-[tool.poetry.group.dev.dependencies]
-commitizen = "^4.13.9"
-cz-path = "^0.0.4"
-djlint = "^1.36.4"
-mypy = "^1.19.1"
-ruff = "^0.15.5"
-yapf = "^0.43.0"
-
-[tool.poetry.group.docs]
-optional = true
-
-[tool.poetry.group.docs.dependencies]
-autodoc-pydantic = "^2.2.0"
-doc8 = "^2.0.0"
-docutils = "<0.22"
-esbonio = "^1.1.0"
-numpydoc = "^1.10.0"
-restructuredtext-lint = "^2.0.2"
-sphinx-datatables = "^1.0.0"
-sphinx-immaterial = "^0.13.9"
-tomlkit = "^0.14.0"
-
-[tool.poetry.group.docs.dependencies.enum-tools]
-extras = ["sphinx"]
-version = "^0.13.0"
-
-[[tool.poetry.group.docs.dependencies.sphinx]]
-python = ">=3.11"
-version = "<9.0.0"
-
-[[tool.poetry.group.docs.dependencies.sphinx]]
-python = "<3.11"
-version = "^7.2.5"
-
-[tool.poetry.group.tests]
-optional = true
-
-[tool.poetry.group.tests.dependencies]
-mock = "^5.2.0"
-pytest = "^9.0.2"
-pytest-cov = "^7.0.0"
-pytest-mock = "^3.15.1"
-
-[tool.poetry.group.tests.dependencies.coveralls]
-python = "<3.13"
-version = "^4.0.1"
-
-[[tool.poetry.include]]
-format = "sdist"
-path = "tests"
-
-[[tool.poetry.packages]]
-include = "bascom"
 
 [tool.pyright]
 deprecateTypingAliases = true
@@ -228,6 +198,9 @@ max-positional-args = 15
 max-public-methods = 30
 max-returns = 10
 max-statements = 100
+
+[tool.uv]
+default-groups = ["dev"]
 
 [tool.yapf]
 align_closing_bracket_with_visual_indent = true

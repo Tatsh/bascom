@@ -1,18 +1,15 @@
 local utils = import 'utils.libjsonnet';
 
 {
+  package_manager: 'uv',
   project_name: 'bascom',
   description: 'Core library that my tools use.',
   keywords: ['library', 'logging', 'utilities'],
   want_main: false,
   version: '0.1.2',
-  pyproject+: {
-    tool+: {
-      poetry+: {
-        dependencies+: {
-          colorlog: utils.latestPypiPackageVersionCaret('colorlog'),
-        },
-      },
+  python_deps+: {
+    main+: {
+      colorlog: utils.latestPypiPackageVersionCaret('colorlog'),
     },
   },
   copilot+: {

@@ -47,7 +47,6 @@ numpy
 numpydoc
 overriden
 pavelzw
-pipx
 pycache
 pydantic
 pydocstyle
@@ -59,7 +58,6 @@ pytest
 regen
 rstcheck
 schemafile
-sdist
 shellformat
 softprops
 sphinxcontrib
@@ -69,7 +67,6 @@ tomlkit
 tryfirst
 udvare
 venv
-virtualenv
 wiswa
 yapf
 yapfignore
