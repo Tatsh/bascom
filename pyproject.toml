@@ -3,14 +3,7 @@ build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [dependency-groups]
-dev = [
-  "commitizen>=4.13.9",
-  "cz-path>=0.0.4",
-  "djlint>=1.36.4",
-  "mypy>=1.19.1",
-  "ruff>=0.15.5",
-  "yapf>=0.43.0",
-]
+dev = ["commitizen>=4.13.9", "cz-path>=0.0.5", "mypy>=1.19.1", "ruff>=0.15.7", "yapf>=0.43.0"]
 docs = [
   "autodoc-pydantic>=2.2.0",
   "doc8>=2.0.0",
@@ -21,8 +14,7 @@ docs = [
   "restructuredtext-lint>=2.0.2",
   "sphinx-datatables>=1.0.0",
   "sphinx-immaterial>=0.13.9",
-  "sphinx<9.0.0; python_version >= \"3.11\"",
-  "sphinx>=7.2.5; python_version < \"3.11\"",
+  "sphinx>=9.1.0; python_version >= \"3.13\"",
   "tomlkit>=0.14.0",
 ]
 tests = [
@@ -75,6 +67,7 @@ version_files = [
   "CITATION.cff",
   "README.md",
   "bascom/__init__.py",
+  "docs/badges.rst",
   "docs/index.rst",
   "package.json",
 ]
@@ -88,14 +81,6 @@ show_missing = true
 [tool.coverage.run]
 branch = true
 omit = ["conftest.py", "tests.py", "tests/*/test_*.py", "tests/test_*.py"]
-
-[tool.djlint]
-max_line_length = 100
-no_line_after_yaml = true
-preserve_blank_lines = true
-preserve_leading_space = true
-profile = "jinja"
-use_gitignore = true
 
 [tool.doc8]
 max-line-length = 100
@@ -113,7 +98,7 @@ warn_unreachable = true
 [tool.pyright]
 deprecateTypingAliases = true
 enableExperimentalFeatures = true
-exclude = ["**/.*", "**/__pycache__", "**/node_modules"]
+exclude = [".venv", "**/node_modules", "**/__pycache__", "**/.*"]
 include = ["./bascom", "./tests"]
 pythonPlatform = "Linux"
 pythonVersion = "3.10"
