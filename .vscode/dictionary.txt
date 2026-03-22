@@ -21,6 +21,7 @@ datatables
 debugpy
 docstrings
 doctrees
+dorny
 dunder
 eeyore
 elif
