@@ -1,6 +1,7 @@
 local utils = import 'utils.libjsonnet';
 
 {
+  uses_user_defaults: true,
   package_manager: 'uv',
   project_name: 'bascom',
   description: 'Core library that my tools use.',
@@ -11,9 +12,6 @@ local utils = import 'utils.libjsonnet';
     main+: {
       colorlog: utils.latestPypiPackageVersionCaret('colorlog'),
     },
-  },
-  copilot+: {
-    intro: 'Bascom is a core library that provides basic functionality such as logging configuration.',
   },
   security_policy_supported_versions: { '0.1.x': ':white_check_mark:' },
 }

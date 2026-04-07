@@ -50,8 +50,6 @@ version = "0.1.2"
 email = "audvare@gmail.com"
 name = "Andrew Udvare"
 
-[project.scripts]
-
 [project.urls]
 Issues = "https://github.com/Tatsh/bascom/issues"
 documentation = "https://bascom.readthedocs.org"
@@ -109,7 +107,8 @@ reportMissingModuleSource = "error"
 reportPropertyTypeMismatch = "error"
 reportUnnecessaryTypeIgnoreComment = "none"
 typeCheckingMode = "off"
-useLibraryCodeForTypes = false
+venv = ".venv"
+venvPath = "."
 
 [tool.pytest.ini_options]
 mock_use_standalone_module = true
@@ -185,7 +184,8 @@ max-returns = 10
 max-statements = 100
 
 [tool.uv]
-default-groups = ["dev"]
+default-groups = "all"
+exclude-newer = "1 week"
 
 [tool.yapf]
 align_closing_bracket_with_visual_indent = true
