@@ -124,8 +124,8 @@
 - Call `.encode()` without arguments if the encoding is expected to be UTF-8.
 - All functions with parameters must have a NumPy-style docstring with a `Parameters` section. If
   the return value is not `None`, include a `Returns` section.
-- Multiline docstrings must have a newline after the opening `"""` and the closing `"""` on its
-  own line:
+- When a docstring spans more than one line, the opening `"""` and the closing `"""` must each sit
+  alone on their own line; the summary and body follow on the lines between them:
 
   ```python
   def process(data: str, *, verbose: bool = False) -> int:
