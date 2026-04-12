@@ -3,7 +3,14 @@ build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [dependency-groups]
-dev = ["commitizen>=4.13.9", "cz-path>=0.0.6", "mypy>=1.20.0", "ruff>=0.15.8", "yapf>=0.43.0"]
+dev = [
+  "commitizen>=4.13.9",
+  "cz-path>=0.0.6",
+  "mypy>=1.20.0",
+  "ruff>=0.15.9",
+  "ty>=0.0.28",
+  "yapf>=0.43.0",
+]
 docs = [
   "autodoc-pydantic>=2.2.0",
   "doc8>=2.0.0",
@@ -83,6 +90,12 @@ omit = ["conftest.py", "tests.py", "tests/*/test_*.py", "tests/test_*.py"]
 [tool.doc8]
 max-line-length = 100
 
+[tool.hatch.build.targets.sdist]
+include = ["bascom", "tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["bascom"]
+
 [tool.mypy]
 cache_dir = "~/.cache/mypy"
 explicit_package_bases = true
@@ -132,23 +145,7 @@ quote-style = "single"
 
 [tool.ruff.lint]
 extend-select = ["ALL"]
-ignore = [
-  "ANN401",
-  "COM812",
-  "CPY001",
-  "D201",
-  "D203",
-  "D204",
-  "D212",
-  "DOC201",
-  "N818",
-  "S101",
-  "S404",
-  "S603",
-  "TD002",
-  "UP046",
-  "UP047",
-]
+ignore = ["ANN401", "COM812", "CPY001", "D203", "D204", "D212", "N818", "S404", "S603", "TD002"]
 preview = true
 
 [tool.ruff.lint.flake8-builtins]
