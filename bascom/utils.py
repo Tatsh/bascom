@@ -122,21 +122,21 @@ def setup_logging(*,
                 'force_color': force_color,
                 'format': '%(log_color)s%(message)s',
                 'log_colors': _DEFAULT_LOG_COLORS | (log_colors or {}),
-                'no_color': no_color,
+                'no_color': no_color
             },
             'debug-no-time': {
                 '()': 'colorlog.ColoredFormatter',
                 'force_color': force_color,
                 'format': _DEBUG_NO_TIME_FORMAT,
                 'log_colors': _DEFAULT_LOG_COLORS | (log_colors or {}),
-                'no_color': no_color,
+                'no_color': no_color
             },
             'debug': {
                 '()': 'colorlog.ColoredFormatter',
                 'force_color': force_color,
                 'format': f'%(light_cyan)s%(asctime)s%(reset)s | {_DEBUG_NO_TIME_FORMAT}',
                 'log_colors': _DEFAULT_LOG_COLORS | (log_colors or {}),
-                'no_color': no_color,
+                'no_color': no_color
             }
         } | formatters,
         'handlers': {
@@ -145,7 +145,7 @@ def setup_logging(*,
                     'colorlog.StreamHandler',
                 'formatter':
                     os.environ.get('BASCOM_CONSOLE_FORMATTER', formatter or
-                                   ('debug' if debug else 'default')),
+                                   ('debug' if debug else 'default'))
             }
         } | handlers,
         'root': {
