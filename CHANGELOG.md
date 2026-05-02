@@ -9,6 +9,17 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-05-02
+
+### Changed
+
+- Refresh project tooling and `uv.lock`, including a `cruft` template sync, switching Ruff checks
+  to `ruff-pre-commit`, and a fix to the workflow YAML cache `restore-keys` expression.
+- Update development dependencies, including `commitizen`, `cspell`, `cz-path`, `filelock`,
+  `markdownlint-cli2`, `mypy`, `prettier`, `prettier-plugin-sort-json`, `pyright`, `pytest`,
+  `ruff`, `sphinx-datatables`, `sphinx-immaterial`, `tomlkit`, and `urllib3`, plus assorted
+  transitive bumps.
+
 ## [0.1.2] - 2025-12-27
 
 ### Fixed
@@ -61,7 +72,8 @@ This release is solely for testing the publishing workflow.
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/bascom/compare/v0.1.2...HEAD
+[unreleased]: https://github.com/Tatsh/bascom/compare/v0.1.3...HEAD
+[0.1.3]: https://github.com/Tatsh/bascom/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/Tatsh/bascom/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/Tatsh/bascom/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/Tatsh/bascom/compare/v0.0.4...v0.1.0

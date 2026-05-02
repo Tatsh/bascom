@@ -7,7 +7,7 @@ local utils = import 'utils.libjsonnet';
   description: 'Core library that my tools use.',
   keywords: ['library', 'logging', 'utilities'],
   want_main: false,
-  version: '0.1.2',
+  version: '0.1.3',
   python_deps+: {
     main+: {
       colorlog: utils.latestPypiPackageVersionCaret('colorlog'),
