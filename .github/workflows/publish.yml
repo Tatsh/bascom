@@ -1,8 +1,13 @@
 jobs:
   check:
+    permissions:
+      actions: 'read'
+      contents: 'read'
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: 'actions/checkout@v6.0.2'
+      - uses: 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd'
+        with:
+          persist-credentials: false
       - env:
           COMMIT_SHA: '${{ github.sha }}'
           GH_TOKEN: '${{ github.token }}'
@@ -68,29 +73,35 @@ jobs:
           echo '::error::Timed out waiting for workflows.'
           exit 1
   publish:
+    environment: 'release'
     needs:
       - 'check'
+    permissions:
+      contents: 'write'
+      id-token: 'write'
     runs-on: 'ubuntu-latest'
     steps:
-      - uses: 'actions/checkout@v6.0.2'
-      - uses: 'actions/setup-python@v6.2.0'
+      - uses: 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd'
+        with:
+          persist-credentials: false
+      - uses: 'actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405'
         with:
           python-version: '3.13'
       - name: 'Install uv'
-        uses: 'astral-sh/setup-uv@v8.1.0'
-      - run: 'uv build'
-      - uses: 'pypa/gh-action-pypi-publish@release/v1'
-      - uses: 'softprops/action-gh-release@v3.0.0'
+        uses: 'astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b'
         with:
-          draft: true
-          files: |
-            dist/*.tar.gz
-            dist/*.whl
+          enable-cache: false
+      - run: 'uv build'
+      - uses: 'pypa/gh-action-pypi-publish@cef221092ed1bacb1cc03d23a2d87d1d172e277b'
+      - env:
+          GH_TOKEN: '${{ github.token }}'
+        name: 'Create or update draft release'
+        run: |
+          gh release create "$GITHUB_REF_NAME" --draft --notes '' dist/*.tar.gz dist/*.whl ||
+            gh release upload "$GITHUB_REF_NAME" dist/*.tar.gz dist/*.whl --clobber
 name: 'Publish'
 'on':
   push:
     tags:
       - 'v*'
-permissions:
-  contents: 'write'
-  id-token: 'write'
+permissions: {}

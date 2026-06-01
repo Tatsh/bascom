@@ -4,11 +4,11 @@ requires = ["hatchling"]
 
 [dependency-groups]
 dev = [
-  "commitizen>=4.13.10",
-  "cz-path>=0.0.6",
-  "mypy>=1.20.2",
-  "ruff==0.15.13",
-  "ty>=0.0.32",
+  "commitizen>=4.16.2",
+  "cz-path>=0.0.7",
+  "mypy>=2.1.0",
+  "ruff==0.15.14",
+  "ty>=0.0.39",
   "yapf>=0.43.0",
 ]
 docs = [
@@ -20,7 +20,7 @@ docs = [
   "sphinx-datatables>=1.0.0",
   "sphinx-immaterial>=0.13.9",
   "sphinx>=9.1.0; python_version >= \"3.13\"",
-  "tomlkit>=0.14.0",
+  "tomlkit>=0.15.0",
 ]
 tests = [
   "coveralls>=4.1.0",
