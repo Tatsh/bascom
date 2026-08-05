@@ -35,3 +35,9 @@ coverage.xml
 htmlcov/
 mypy-report.xml
 node_modules/
+/.claude/auto-continue.md
+/.claude/session-recover.js
+/.claude/standing-instructions.md
+/.claude/statusline-quota-cache.sh
+/HANDOFF.md
+/session-recover.yaml
