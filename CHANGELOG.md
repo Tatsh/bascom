@@ -9,6 +9,14 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Added
+
+- `bascom.cli` module exporting `debug_option`, also re-exported from `bascom`. It is a Click
+  decorator factory: call it with a mapping of loggers, then apply the result to a Click command to
+  add a `-d/--debug` flag that routes the command through `setup_logging`, so tools no longer have
+  to repeat that boilerplate.
+- `click` (at least version 8.4.1) is now a runtime dependency.
+
 ## [0.1.3] - 2026-05-02
 
 ### Changed

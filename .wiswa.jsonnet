@@ -10,6 +10,7 @@ local utils = import 'utils.libjsonnet';
   version: '0.1.3',
   python_deps+: {
     main+: {
+      click: utils.latestPypiPackageVersionCaret('click'),
       colorlog: utils.latestPypiPackageVersionCaret('colorlog'),
     },
   },

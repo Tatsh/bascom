@@ -42,7 +42,7 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Typing :: Typed",
 ]
-dependencies = ["colorlog>=6.10.1", "typing-extensions>=4.15.0"]
+dependencies = ["click>=8.4.1", "colorlog>=6.10.1", "typing-extensions>=4.15.0"]
 description = "Core library that my tools use."
 keywords = ["library", "logging", "utilities"]
 license = "MIT"
