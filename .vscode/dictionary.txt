@@ -36,6 +36,7 @@ foxundermoon
 functools
 genindex
 globaltoc
+handoff
 hoverxref
 htmlcov
 intersphinx
@@ -86,6 +87,7 @@ shellformat
 snapcraft
 soupsieve
 sphinxcontrib
+statusline
 tatsh
 testpaths
 tomlkit
