@@ -58,6 +58,7 @@ myproject
 mypy
 namedtuples
 norecursedirs
+nullglob
 numpy
 oneline
 overriden
@@ -84,6 +85,7 @@ sdist
 setattr
 shellcheck
 shellformat
+shopt
 snapcraft
 soupsieve
 sphinxcontrib
