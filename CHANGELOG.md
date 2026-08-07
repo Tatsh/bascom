@@ -9,13 +9,22 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-07
+
 ### Added
 
-- `bascom.cli` module exporting `debug_option`, also re-exported from `bascom`. It is a Click
-  decorator factory: call it with a mapping of loggers, then apply the result to a Click command to
-  add a `-d/--debug` flag that routes the command through `setup_logging`, so tools no longer have
-  to repeat that boilerplate.
-- `click` (at least version 8.4.1) is now a runtime dependency.
+- `bascom.cli` module exporting `debug_option`, also re-exported from `bascom`. `debug_option` is a
+  Click decorator factory: call it with a mapping of loggers, then apply the result to a Click
+  command to add a `-d/--debug` flag that routes the command through `setup_logging`, so tools no
+  longer have to repeat that boilerplate.
+- `click` (at least version 8.4.2) is now a runtime dependency.
+
+### Changed
+
+- Raise the minimum `colorlog` version to 6.12.0 and the minimum `typing-extensions` version to
+  4.16.0.
+- Refresh project tooling, including a `cruft` template sync, Yarn 4.18.0, updated GitHub Actions
+  workflows, and updated development dependencies.
 
 ## [0.1.3] - 2026-05-02
 
@@ -80,7 +89,8 @@ This release is solely for testing the publishing workflow.
 
 First version.
 
-[unreleased]: https://github.com/Tatsh/bascom/compare/v0.1.3...HEAD
+[unreleased]: https://github.com/Tatsh/bascom/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/Tatsh/bascom/compare/v0.1.3...v0.2.0
 [0.1.3]: https://github.com/Tatsh/bascom/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/Tatsh/bascom/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/Tatsh/bascom/compare/v0.1.0...v0.1.1
