@@ -3,8 +3,9 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any, cast
 
-from bascom import debug_option
 import click
+
+from bascom import debug_option
 
 if TYPE_CHECKING:
     from click.testing import CliRunner
