@@ -4,12 +4,12 @@ requires = ["hatchling"]
 
 [dependency-groups]
 dev = [
-  "commitizen>=4.17.0",
+  "commitizen>=4.19.0",
   "cz-path>=0.0.7",
-  "mypy>=2.3.0",
-  "ruff==0.16.8",
-  "ty>=0.0.65",
-  "yapf>=0.43.0",
+  "mypy>=2.3.1",
+  "ruff==0.16.9",
+  "ty>=0.0.84",
+  "yapf>=0.43.0"
 ]
 docs = [
   "autodoc-pydantic>=2.2.0",
@@ -20,14 +20,14 @@ docs = [
   "sphinx-datatables>=1.0.0",
   "sphinx-immaterial>=0.13.9",
   "sphinx>=9.1.0; python_version >= \"3.13\"",
-  "tomlkit>=0.15.1",
+  "tomlkit>=0.15.1"
 ]
 tests = [
   "coveralls>=4.1.0",
   "mock>=5.2.0",
   "pytest-cov>=7.1.0",
   "pytest-mock>=3.15.1",
-  "pytest>=9.1.1",
+  "pytest>=9.1.1"
 ]
 
 [project]
@@ -40,9 +40,9 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
-  "Typing :: Typed",
+  "Typing :: Typed"
 ]
-dependencies = ["click>=8.4.2", "colorlog>=6.12.0", "typing-extensions>=4.16.0"]
+dependencies = ["click>=8.5.0", "colorlog>=6.12.0", "typing-extensions>=4.16.0"]
 description = "Core library that my tools use."
 keywords = ["library", "logging", "utilities"]
 license = "MIT"
@@ -72,7 +72,7 @@ version_files = [
   "bascom/__init__.py",
   "docs/badges.rst",
   "docs/index.rst",
-  "package.json",
+  "package.json"
 ]
 version_provider = "pep621"
 
@@ -107,7 +107,7 @@ warn_unreachable = true
 [tool.pyright]
 deprecateTypingAliases = true
 enableExperimentalFeatures = true
-exclude = [".venv", "**/node_modules", "**/__pycache__", "**/.*"]
+exclude = [".sbclaude-venv", ".venv", "**/node_modules", "**/__pycache__", "**/.*"]
 include = ["./bascom", "./tests"]
 pythonPlatform = "Linux"
 pythonVersion = "3.10"
@@ -144,19 +144,16 @@ quote-style = "single"
 [tool.ruff.lint]
 extend-select = ["ALL"]
 ignore = [
-  "ANN401",
-  "COM812",
-  "CPY001",
-  "D203",
-  "D204",
-  "D212",
-  "N818",
-  "RUF105",
-  "RUF106",
-  "RUF201",
-  "S404",
-  "S603",
-  "TD002",
+  "any-type",
+  "error-suffix-on-exception-name",
+  "incorrect-blank-line-after-class",
+  "incorrect-blank-line-before-class",
+  "missing-copyright-notice",
+  "missing-todo-author",
+  "missing-trailing-comma",
+  "multi-line-summary-first-line",
+  "subprocess-without-shell-equals-true",
+  "suspicious-subprocess-import"
 ]
 preview = true
 
@@ -171,8 +168,9 @@ multiline-quotes = "double"
 case-sensitive = true
 combine-as-imports = true
 from-first = true
+known-first-party = ["bascom"]
 required-imports = ["from __future__ import annotations"]
-section-order = ["future", "standard-library", "third-party", "local-folder"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
 
 [tool.ruff.lint.mccabe]
 max-complexity = 20
@@ -243,4 +241,4 @@ split_penalty_logical_operator = 300
 use_tabs = false
 
 [tool.yapfignore]
-ignore_patterns = [".venv", ".wiswa-ci", "node_modules"]
+ignore_patterns = [".sbclaude-venv", ".venv", ".wiswa-ci", "node_modules"]

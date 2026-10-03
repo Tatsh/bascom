@@ -1,9 +1,9 @@
-Ångström
 appimage
 asyncio
 autoclass
 autodoc
 automodule
+autouse
 bascom
 bsky
 cdrommsf
@@ -12,7 +12,6 @@ colorlog
 colors
 commitizen
 conftest
-cooldown
 coveragerc
 coverallsapp
 ctypes
@@ -39,7 +38,6 @@ globaltoc
 handoff
 hoverxref
 htmlcov
-intersphinx
 isort
 itertools
 jinja
@@ -57,14 +55,18 @@ monkeypatch
 myproject
 mypy
 namedtuples
+noone
+noqa
 norecursedirs
 nullglob
 numpy
+numpydoc
 oneline
 overriden
 pathlib
 pavelzw
 plistlib
+popen
 preapproved
 pycache
 pydantic
@@ -80,6 +82,7 @@ pythonhosted
 regen
 ripgreprc
 rstcheck
+sbclaude
 schemafile
 sdist
 setattr
@@ -106,8 +109,8 @@ virtualenv
 winget
 wiswa
 wiswa's
-worktree
 yapf
 yapfignore
 yarnrc
 zizmor
+Ångström
