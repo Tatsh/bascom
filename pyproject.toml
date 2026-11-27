@@ -4,11 +4,11 @@ requires = ["hatchling"]
 
 [dependency-groups]
 dev = [
-  "commitizen>=4.19.0",
+  "commitizen>=4.19.4",
   "cz-path>=0.0.7",
-  "mypy>=2.3.1",
-  "ruff==0.17.5",
-  "ty>=0.0.84",
+  "mypy>=2.4.1",
+  "ruff==0.17.6",
+  "ty>=0.0.107",
   "yapf>=0.43.0"
 ]
 docs = [
@@ -18,15 +18,15 @@ docs = [
   "esbonio>=2.1.0",
   "restructuredtext-lint>=2.0.2",
   "sphinx-datatables>=1.0.0",
-  "sphinx-immaterial>=0.13.9",
-  "sphinx>=9.1.0; python_version >= \"3.13\""
+  "sphinx-immaterial>=0.13.12",
+  "sphinx>=9.2.0; python_version >= \"3.13\""
 ]
 tests = [
   "coveralls>=4.1.0",
   "mock>=5.2.0",
   "pytest-cov>=7.1.0",
-  "pytest-mock>=3.16.0",
-  "pytest>=9.1.1"
+  "pytest-mock>=3.17.0",
+  "pytest>=9.2.0"
 ]
 
 [project]
@@ -40,13 +40,13 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Typing :: Typed"
 ]
-dependencies = ["click>=8.5.0", "colorlog>=6.12.0", "typing-extensions>=4.16.0"]
+dependencies = ["click>=8.5.1", "colorlog>=6.12.0", "typing-extensions>=4.16.0"]
 description = "Core library that my tools use."
 keywords = ["library", "logging", "utilities"]
 license = "MIT"
 name = "bascom"
 readme = "README.md"
-requires-python = ">=3.11,<4.0"
+requires-python = ">=3.11.5,<4.0"
 version = "0.2.0"
 
 [[project.authors]]
